@@ -1,0 +1,32 @@
+apiVersion: "sparkoperator.k8s.io/v1beta2"
+kind: SparkApplication
+metadata:
+  name: pyspark-pi
+  namespace: etl
+spec:
+  type: Python
+  pythonVersion: "3"
+  mode: cluster
+  image: "gcr.io/GCP_PROJECT_ID/IMAGE_NAME:VERSION"
+  imagePullPolicy: Always
+  mainApplicationFile: local:///opt/spark/examples/src/main/python/exampleDeltaLake.py
+  sparkVersion: "3.1.1"
+  restartPolicy:
+    type: OnFailure
+    onFailureRetries: 3
+    onFailureRetryInterval: 10
+    onSubmissionFailureRetries: 5
+    onSubmissionFailureRetryInterval: 20
+  driver:
+    cores: 3
+    coreLimit: "1200"
+    memory: "1200m"
+    labels:
+      version: 3.1.1
+    serviceAccount: spark
+  executor:
+    cores: 3
+    instances: 3
+    memory: "1500m"
+    labels:
+      version: 3.1.1
