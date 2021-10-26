@@ -1,1 +1,3 @@
 gcp_config.json
+.venv/
+.ipynb_checkpoints/

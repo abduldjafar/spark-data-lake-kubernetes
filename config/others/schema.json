@@ -1,0 +1,1 @@
+{"fields":[{"metadata":{},"name":"snippet","nullable":true,"type":{"fields":[{"metadata":{},"name":"assignable","nullable":true,"type":"boolean"},{"metadata":{},"name":"channelId","nullable":true,"type":"string"},{"metadata":{},"name":"title","nullable":true,"type":"string"}],"type":"struct"}}],"type":"struct"}
