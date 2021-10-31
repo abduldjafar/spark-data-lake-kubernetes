@@ -9,7 +9,7 @@ spec:
   mode: cluster
   image: "gcr.io/GCP_PROJECT_ID/IMAGE_NAME:VERSION"
   imagePullPolicy: Always
-  mainApplicationFile: local:///opt/spark/examples/src/main/python/exampleDeltaLake.py
+  mainApplicationFile: local:///opt/spark/work-dir/script/etl/gcs-etl-delta-lake.py
   sparkVersion: "3.1.1"
   restartPolicy:
     type: OnFailure
